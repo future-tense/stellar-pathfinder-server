@@ -21,7 +21,7 @@ By default, this is one of the responsibilities of a Horizon server.
 For the vision to come true of using path payments everyday, for every payment, path finding has to be able to run at interactive rates.
 You don't want to leave users hanging, waiting around wondering what's going on.
 
-Looking at the current stats, that's exactly what happens now, which is what lead to the development of this project.
+Looking at the current stats, that's exactly what happens now, which is what led to the development of this project.
 
 |       | stellar.org |  satoshipay.io | pathfinder |
 |-------|-------------|----------------|------------|
@@ -33,25 +33,22 @@ Looking at the current stats, that's exactly what happens now, which is what lea
 
 ## Requirements
 
-* Typescript
-    * npm install -g typescript
 * A synced stellar-core node
 * A PostgreSQL instance w/ a stellar-core database
 
 ## Installing
 
 ```
-git clone https://github.com/future-tense/stellar-pathfinder-server.git
-cd stellar-pathfinder-server
-npm install
-npm run build
+npm install -g @futuretense/stellar-pathfinder-server
 ```
+
+This will install the command-line tool `stellar-pathfinder-server`, which can be run, with the proper environment variables set.
 
 ## Environment variables
 
 * STELLAR_CORE_DB
     - PostgreSQL connection string, e.g.
-        * `postgres://{username}:{password}@{host}/{database}`
+        * `postgres://{username}:{password}@{host}:{port}/{database}`
 * API_PORT
     - TCP port to listen to for incoming connections for the API. Default: 8000
 * TRIGGER_DELAY
