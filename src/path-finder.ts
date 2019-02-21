@@ -73,10 +73,18 @@ export function findPaths(
 
     const lowestCost = new Map<string, number>();
 
+    //
+    //  the paths found for each individual target asset
+    //
+
     const paths = {};
     for (const asset of targetAssets) {
         paths[asset] = [];
     }
+
+    //
+    //  the current path being checked
+    //
 
     const path: string[] = [];
 
