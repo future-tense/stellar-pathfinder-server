@@ -1,14 +1,21 @@
 {
   "name": "@futuretense/stellar-pathfinder-server",
   "version": "1.0.0",
-  "description": "",
-  "main": "dist/index.js",
+  "description": "A standalone path finder for Stellar",
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "bin": "bin/pathfinder.js",
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Johan Stén <johan@futuretense.io>",
   "license": "MIT",
+  "engines": {
+    "node": ">=7.8.0"
+  },
   "dependencies": {
     "@becual/pg-notify": "^2.0.5",
     "bignumber.js": "^8.0.2",
