@@ -79,9 +79,10 @@ export function findPaths(
     }
 
     const path: string[] = [];
-    const find = (sourceAsset: string, amountIn: number) => {
 
-        if (path.includes(sourceAsset)) {
+    const find = (destAsset: string, amountIn: number) => {
+
+        if (path.includes(destAsset)) {
             return;
         }
 
@@ -91,9 +92,9 @@ export function findPaths(
         //  in traversing any further
         //
 
-        const cost = lowestCost.get(sourceAsset);
+        const cost = lowestCost.get(destAsset);
         if (!cost || (amountIn < cost)) {
-            lowestCost.set(sourceAsset, amountIn);
+            lowestCost.set(destAsset, amountIn);
         } else {
             return;
         }
@@ -103,12 +104,12 @@ export function findPaths(
         //  store away the path we've taken to get here
         //
 
-        if (sourceAsset in paths) {
-            paths[sourceAsset].push([amountIn, path.slice(1).reverse()]);
+        if (destAsset in paths) {
+            paths[destAsset].push([amountIn, path.slice(1).reverse()]);
         }
 
         //
-        //  if we're at the maximum path length (`path` + `sourceAsset`),
+        //  if we're at the maximum path length (`path` + `destAsset`),
         //  stop searching
         //
 
@@ -120,14 +121,13 @@ export function findPaths(
         //  fan out
         //
 
-
-        const arcs = graph.get(sourceAsset);
+        const arcs = graph.get(destAsset);
         if (arcs) {
-            path.push(sourceAsset);
-            for (const [destAsset, capacity, orderBook] of arcs) {
+            path.push(destAsset);
+            for (const [sourceAsset, capacity, orderBook] of arcs) {
                 if (capacity >= amountIn) {
                     const amountOut = tradeSell(amountIn, orderBook);
-                    find(destAsset, amountOut);
+                    find(sourceAsset, amountOut);
                 }
             }
             path.pop();
