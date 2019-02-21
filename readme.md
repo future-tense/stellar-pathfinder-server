@@ -18,7 +18,7 @@ By default, this is one of the responsibilities of a Horizon server.
 
 # Why?
 
-For the vision to come true of using path payments everyday, for every payment, path finding has to be able to run at interactive rates.
+For the vision to come true of everyday use of path payments, for *every* payment, path finding has to be able to run at interactive rates.
 You don't want to leave users hanging, waiting around wondering what's going on.
 
 Looking at the current stats, that's exactly what happens now, which is what led to the development of this project.
@@ -74,4 +74,6 @@ The differences are
 
 Notes:<br>
 <br><a name="note1"> 1) using the median value of three runs of `time curl https://{host}/accounts/GDUMWJ3ISSVBKGZHVQZRVUN6TUOJETXDV7POKVNXEYBCRN4CQOYCV5AA`</a><br>
-<br><a name="note2"> 2) using the median value of three runs of `time curl "https://{host}//paths?source_account=GDUMWJ3ISSVBKGZHVQZRVUN6TUOJETXDV7POKVNXEYBCRN4CQOYCV5AA&destination_account=GDUMWJ3ISSVBKGZHVQZRVUN6TUOJETXDV7POKVNXEYBCRN4CQOYCV5AA&destination_asset_type=credit_alphanum4&destination_asset_code=BTC&destination_asset_issuer=GBSTRH4QOTWNSVA6E4HFERETX4ZLSR3CIUBLK7AXYII277PFJC4BBYOG&destination_amount=0.01"`</a><br>
+<br><a name="note2"> 2) using the median value of three runs of `time curl "https://{host}/paths?source_account=GDUMWJ3ISSVBKGZHVQZRVUN6TUOJETXDV7POKVNXEYBCRN4CQOYCV5AA&destination_account=GDUMWJ3ISSVBKGZHVQZRVUN6TUOJETXDV7POKVNXEYBCRN4CQOYCV5AA&destination_asset_type=credit_alphanum4&destination_asset_code=BTC&destination_asset_issuer=GBSTRH4QOTWNSVA6E4HFERETX4ZLSR3CIUBLK7AXYII277PFJC4BBYOG&destination_amount=0.01"`</a><br>
+
+Copyright &copy; 2019 Future Tense, LLC
