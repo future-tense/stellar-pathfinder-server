@@ -131,7 +131,9 @@ export async function init() {
 
     const port = process.env.API_PORT || 8000;
     const prefix = process.env.API_PREFIX || '';
+
     const app = express();
+    app.set('json spaces', 4);
     app.get(`${prefix}/paths`, findPaths);
 
     try {
