@@ -38,11 +38,23 @@ Looking at the current stats, that's exactly what happens now, which is what led
 
 ## Installing
 
+#### From the NPM package
+
 ```
 npm install -g @futuretense/stellar-pathfinder-server
 ```
 
-This will install the command-line tool `stellar-pathfinder-server`, which can be run, with the proper environment variables set.
+#### From the source code
+
+```
+git clone https://github.com/future-tense/stellar-pathfinder-server.git
+cd stellar-pathfinder-server
+npm install
+npm run build
+npm install -g
+```
+
+These will install the command-line tool `stellar-pathfinder-server`, which can be run, with the proper environment variables set.
 
 ## Environment variables
 
@@ -58,7 +70,7 @@ This will install the command-line tool `stellar-pathfinder-server`, which can b
 
 ## Compatibility with Horizon
 
-The REST API is more-or-less compatible with the Horizon API, and could be used as a drop-in replacement.
+The REST API is more-or-less compatible with the Horizon API, and could be used as a drop-in replacement simply by remapping the "/paths" path on the server that runs Horizon.
 
 The differences are
 
@@ -66,9 +78,6 @@ The differences are
 * `pathfinder` ignores the `destination_account` query parameter
 * `pathfinder` returns fewer results
 
-## TODO:
-
-* add rate limiting
 
 ---
 
