@@ -4,8 +4,9 @@ import * as log from './log';
 
 // -----------------------------------------------------------------------------
 
-type Order = [number, number];
-export type OrderBook = Order[];
+import {
+    OrderBook
+} from './orderbook';
 
 export type Arc = [
     string,

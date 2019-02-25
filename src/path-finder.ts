@@ -1,42 +1,15 @@
 
+import { buy } from './orderbook';
+
 // -----------------------------------------------------------------------------
 
 import {
-    Graph,
-    OrderBook
+    Graph
 } from './graph';
 
 const enum Constants {
     maxLengthMinusOne = 7 - 1
 }
-
-// -----------------------------------------------------------------------------
-
-/**
- *
- * @param amountToSell
- * @param orderBook
- * @return {number}
- */
-
-const tradeSell = (
-    amountToSell: number,
-    orderBook: OrderBook
-): number => {
-
-    let amountToBuy = 0;
-    for (const [amount, price] of orderBook) {
-        if (amountToSell > amount) {
-            amountToBuy  += amount * price;
-            amountToSell -= amount;
-        } else {
-            amountToBuy  += amountToSell * price;
-            break;
-        }
-    }
-
-    return amountToBuy;
-};
 
 // -----------------------------------------------------------------------------
 
@@ -134,7 +107,7 @@ export function findPaths(
             path.push(destAsset);
             for (const [sourceAsset, capacity, orderBook] of arcs) {
                 if (capacity >= amountIn) {
-                    const amountOut = tradeSell(amountIn, orderBook);
+                    const amountOut = buy(orderBook, amountIn);
                     find(sourceAsset, amountOut);
                 }
             }
