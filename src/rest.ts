@@ -133,7 +133,7 @@ export async function init() {
     const prefix = process.env.API_PREFIX || '';
 
     const app = express();
-    app.set('json spaces', 4);
+    app.set('json spaces', 2);
     app.get(`${prefix}/paths`, findPaths);
 
     try {
