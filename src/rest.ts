@@ -1,5 +1,5 @@
 
-import * as StellarSdk from 'stellar-sdk';
+import * as strkey from '@futuretense/stellar-strkey';
 import * as express from 'express';
 
 import * as stellar from './stellar';
@@ -17,7 +17,7 @@ const validateAmount = (amount) => {
 
 const validateAddress = (source) => {
     return (
-        source && StellarSdk.StrKey.isValidEd25519PublicKey(source)
+        source && strkey.isValidEd25519PublicKey(source)
     );
 };
 
