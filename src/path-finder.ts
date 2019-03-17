@@ -56,6 +56,16 @@ export function findPaths(
     }
 
     //
+    //  take a short-cut if `destAssset` is one of the target assets,
+    //  and add a direct path already from the start
+    //
+
+    if (targetAssets.includes(destAsset)) {
+        paths[destAsset].push([destAmount, []]);
+        lowestCost.set(destAsset, destAmount);
+    }
+
+    //
     //  the current path being checked
     //
 
